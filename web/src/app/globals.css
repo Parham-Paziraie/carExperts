@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050914;
+  --color-foreground: #f3f4f6;
+  
+  --color-gold-400: #eecf6d;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b08d26;
+  
+  --color-midnight-800: #0a0f1c;
+  --color-midnight-900: #050914;
+
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-400 to-gold-600;
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+}
+
+:root {
+  --background: #050914;
+  --foreground: #f3f4f6;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  antialiased: true;
+}
