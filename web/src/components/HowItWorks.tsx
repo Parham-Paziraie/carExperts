@@ -9,7 +9,7 @@ const steps = [
     {
         icon: Handshake,
         title: "Negotiate",
-        description: "We inspect vehicles and negotiate firmly on your behalf to secure the lowest possible price."
+        description: "We negotiate firmly on your behalf to secure the lowest possible price."
     },
     {
         icon: CarFront,

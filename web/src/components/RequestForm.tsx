@@ -6,17 +6,39 @@ import { Send, Loader2 } from 'lucide-react';
 export default function RequestForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+
+    const [make, setMake] = useState('');
+    const [model, setModel] = useState('');
+    const [year, setYear] = useState('');
+    const [budget, setBudget] = useState('');
+    const [location, setLocation] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setError(null);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ make, model, year, budget, location, phone, email }),
+            });
 
-        setIsSubmitting(false);
-        setSubmitted(true);
-        console.log("Form submitted");
+            if (!res.ok) {
+                const data = await res.json();
+                throw new Error(data?.error?.message ?? 'Something went wrong. Please try again.');
+            }
+
+            setSubmitted(true);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (submitted) {
@@ -87,11 +109,13 @@ export default function RequestForm() {
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Make</label>
                             <input type="text" placeholder="e.g. Porsche" required
+                                value={make} onChange={e => setMake(e.target.value)}
                                 className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />
                         </div>
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Model</label>
                             <input type="text" placeholder="e.g. 911 GT3" required
+                                value={model} onChange={e => setModel(e.target.value)}
                                 className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />
                         </div>
                     </div>
@@ -100,11 +124,13 @@ export default function RequestForm() {
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Year</label>
                             <input type="text" placeholder="e.g. 2022+"
+                                value={year} onChange={e => setYear(e.target.value)}
                                 className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />
                         </div>
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Budget</label>
                             <input type="text" placeholder="$100k - $150k"
+                                value={budget} onChange={e => setBudget(e.target.value)}
                                 className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />
                         </div>
                     </div>
@@ -112,6 +138,7 @@ export default function RequestForm() {
                     <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Delivery Location</label>
                         <input type="text" placeholder="City, State" required
+                            value={location} onChange={e => setLocation(e.target.value)}
                             className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />
                     </div>
 
@@ -119,11 +146,13 @@ export default function RequestForm() {
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Phone</label>
                             <input type="tel" placeholder="(555) 000-0000" required
+                                value={phone} onChange={e => setPhone(e.target.value)}
                                 className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />
                         </div>
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Email</label>
                             <input type="email" placeholder="you@example.com" required
+                                value={email} onChange={e => setEmail(e.target.value)}
                                 className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />
                         </div>
                     </div>
@@ -142,6 +171,10 @@ export default function RequestForm() {
                             "Start Request"
                         )}
                     </button>
+
+                    {error && (
+                        <p className="text-sm text-center text-red-400 mt-2">{error}</p>
+                    )}
 
                     <p className="text-xs text-center text-gray-500 mt-4">
                         By submitting, you agree to our contact terms. We respect your privacy.
