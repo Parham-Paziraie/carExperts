@@ -1,6 +1,17 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+
+const handleScroll = (e: React.MouseEvent, id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', `/#${id}`);
+    }
+};
 
 export default function Hero() {
     return (
@@ -45,14 +56,16 @@ export default function Hero() {
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                         <Link
-                            href="#contact"
+                            href="/#contact"
+                            onClick={(e) => handleScroll(e, 'contact')}
                             className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full text-midnight-900 font-bold hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300"
                         >
                             Get Started
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <Link
-                            href="#how-it-works"
+                            href="/#how-it-works"
+                            onClick={(e) => handleScroll(e, 'how-it-works')}
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/10 hover:bg-white/5 text-white transition-all duration-300"
                         >
                             How it Works
