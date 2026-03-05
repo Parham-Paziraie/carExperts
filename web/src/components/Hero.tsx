@@ -34,21 +34,13 @@ export default function Hero() {
                     </h1>
 
                     <p className="text-lg md:text-xl text-gray-400 max-w-lg leading-relaxed">
-                        Stop searching. Start driving. We negotiate the best deals,
-                        handle inspections, and deliver your dream car directly to you.
+                        Stop overpaying at dealerships. Our expert negotiators work the USA car market to secure you the lowest price possible.
                     </p>
 
                     <div className="flex flex-wrap gap-3">
                         <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-white/5 border border-gold-500/40 text-gold-300">💰 Save Money</span>
                         <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-white/5 border border-gold-500/40 text-gold-300">⚡ Save Time</span>
                         <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-white/5 border border-gold-500/40 text-gold-300">🌿 Save Energy</span>
-                    </div>
-
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/15 border border-gold-500/60 backdrop-blur-sm">
-                        <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
-                        <span className="text-sm font-semibold text-gold-300">
-                            🔥 Only $99 negotiation fee — first 5 people
-                        </span>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">

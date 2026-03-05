@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "carDealy | Your Personal Car Concierge",
+  title: "carDeali | Your Personal Car Concierge",
   description: "Stop searching. Start driving. We negotiate the best deals for you.",
 };
 

@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   const { make, model, year, budget, color, location, scheduleFrom, scheduleTo, phone, email } = await req.json();
 
   const { error } = await resend.emails.send({
-    from: 'carDealy <noreply@cardeali.com>',
+    from: 'carDeali <noreply@cardeali.com>',
     to: 'cardeali.deals@gmail.com',
     replyTo: email,
     subject: `New Car Request — ${make} ${model}`,

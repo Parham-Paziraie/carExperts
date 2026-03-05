@@ -73,7 +73,7 @@ export default function RequestForm() {
                         Ready to drive?
                     </h2>
                     <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                        Fill out the form with your preferences. We require a $200 retainer to start the dedicated search process, and a $500 success fee upon finalization.
+                        Fill out the form with your preferences. We charge a simple $399 fixed fee — no hidden costs, no surprises.
                     </p>
 
                     <div className="space-y-6">
@@ -91,7 +91,7 @@ export default function RequestForm() {
                                 2
                             </div>
                             <div>
-                                <strong className="text-white block">Consultation</strong>
+                                <strong className="text-white block">Free consultation</strong>
                                 <span className="text-sm">We'll contact you to confirm details.</span>
                             </div>
                         </div>
