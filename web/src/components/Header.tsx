@@ -8,7 +8,7 @@ export default function Header() {
                 <Link href="/" className="flex items-center gap-2 group">
                     <Car className="w-8 h-8 text-gold-500 group-hover:text-gold-400 transition-colors" />
                     <span className="font-serif text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gold-400 to-gold-600">
-                        CarExperts
+                        carDealy
                     </span>
                 </Link>
 

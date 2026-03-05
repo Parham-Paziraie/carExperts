@@ -12,7 +12,10 @@ export default function RequestForm() {
     const [model, setModel] = useState('');
     const [year, setYear] = useState('');
     const [budget, setBudget] = useState('');
+    const [color, setColor] = useState('');
     const [location, setLocation] = useState('');
+    const [scheduleFrom, setScheduleFrom] = useState('');
+    const [scheduleTo, setScheduleTo] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
 
@@ -25,7 +28,7 @@ export default function RequestForm() {
             const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ make, model, year, budget, location, phone, email }),
+                body: JSON.stringify({ make, model, year, budget, color, location, scheduleFrom, scheduleTo, phone, email }),
             });
 
             if (!res.ok) {
@@ -122,6 +125,15 @@ export default function RequestForm() {
 
                     <div className="grid grid-cols-2 gap-6">
                         <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Color</label>
+                            <input type="text" placeholder="e.g. Midnight Blue"
+                                value={color} onChange={e => setColor(e.target.value)}
+                                className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Year</label>
                             <input type="text" placeholder="e.g. 2022+"
                                 value={year} onChange={e => setYear(e.target.value)}
@@ -140,6 +152,21 @@ export default function RequestForm() {
                         <input type="text" placeholder="City, State" required
                             value={location} onChange={e => setLocation(e.target.value)}
                             className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Earliest Delivery</label>
+                            <input type="date"
+                                value={scheduleFrom} onChange={e => setScheduleFrom(e.target.value)}
+                                className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600 [color-scheme:dark]" />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Latest Delivery</label>
+                            <input type="date"
+                                value={scheduleTo} onChange={e => setScheduleTo(e.target.value)}
+                                className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600 [color-scheme:dark]" />
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
