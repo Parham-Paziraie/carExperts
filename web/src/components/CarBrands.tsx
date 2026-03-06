@@ -9,6 +9,8 @@ const brands = [
     { name: "Mercedes-Benz", file: "/logos/mercedes-benz-alt-svgrepo-com.svg", filterClass: "brightness-0 invert opacity-60 group-hover:opacity-100" },
     { name: "Nissan", file: "/logos/nissan-svgrepo-com.svg", filterClass: "brightness-0 invert opacity-60 group-hover:opacity-100" },
     { name: "RAM", file: "/logos/ram-alt-svgrepo-com.svg", filterClass: "brightness-0 invert opacity-60 group-hover:opacity-100" },
+    { name: "Toyota", file: "/logos/toyota-svgrepo-com.svg", filterClass: "brightness-0 invert opacity-60 group-hover:opacity-100" },
+    { name: "Hyundai", file: "/logos/hyundai-svgrepo-com.svg", filterClass: "brightness-0 invert opacity-60 group-hover:opacity-100" },
 ];
 
 export default function CarBrands() {
@@ -26,7 +28,7 @@ export default function CarBrands() {
                     We source vehicles from all makes and models across the US market.
                 </p>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 max-w-4xl mx-auto">
                     {brands.map((brand) => (
                         <div
                             key={brand.name}
