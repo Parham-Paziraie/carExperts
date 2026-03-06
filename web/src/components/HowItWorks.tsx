@@ -34,7 +34,7 @@ export default function HowItWorks() {
             <div className="container mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
                     <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">
-                        Effortless Buying Process
+                        Effortless Car Buying Process
                     </h2>
                     <p className="text-gray-400 text-lg">
                         We simplify the complex car buying experience into five easy steps.
