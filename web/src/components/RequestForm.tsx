@@ -148,7 +148,7 @@ export default function RequestForm() {
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Delivery Location</label>
+                        <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Pickup city</label>
                         <input type="text" placeholder="City, State" required
                             value={location} onChange={e => setLocation(e.target.value)}
                             className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />

@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
         <tr><td><b>Year</b></td><td>${year || '—'}</td></tr>
         <tr><td><b>Budget</b></td><td>${budget || '—'}</td></tr>
         <tr><td><b>Color</b></td><td>${color || '—'}</td></tr>
-        <tr><td><b>Delivery Location</b></td><td>${location}</td></tr>
+        <tr><td><b>Pickup city</b></td><td>${location}</td></tr>
         <tr><td><b>Schedule From</b></td><td>${scheduleFrom || '—'}</td></tr>
         <tr><td><b>Schedule To</b></td><td>${scheduleTo || '—'}</td></tr>
         <tr><td><b>Phone</b></td><td>${phone}</td></tr>

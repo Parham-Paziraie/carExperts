@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import CarBrands from "@/components/CarBrands";
 import WhyCarDeali from "@/components/WhyCarDeali";
 import HowItWorks from "@/components/HowItWorks";
 import Reviews from "@/components/Reviews";
@@ -10,6 +11,7 @@ export default function Home() {
     <main className="min-h-screen bg-midnight-900">
       <Header />
       <Hero />
+      <CarBrands />
       <WhyCarDeali />
       <HowItWorks />
       <Reviews />
