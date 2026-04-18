@@ -108,7 +108,7 @@ export default function RequestForm() {
                 </div>
 
                 <form onSubmit={handleSubmit} className="glass-panel p-8 md:p-10 rounded-3xl space-y-6 border border-white/10 relative z-10">
-                    <div className="grid grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Make</label>
                             <input type="text" placeholder="e.g. Porsche" required
@@ -123,7 +123,7 @@ export default function RequestForm() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Color</label>
                             <input type="text" placeholder="e.g. Midnight Blue"
@@ -132,7 +132,7 @@ export default function RequestForm() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Year</label>
                             <input type="text" placeholder="e.g. 2022+"
@@ -154,7 +154,7 @@ export default function RequestForm() {
                             className="w-full bg-black/20 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500/50 focus:ring-1 focus:ring-gold-500/50 outline-none transition-all placeholder:text-gray-600" />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Earliest Delivery</label>
                             <input type="date"
